@@ -1,2 +1,5 @@
-# PE_Bloc_D
-Dades del Bloc D de l'assignatura de Probabilitat i Estadística del GEI de la UPC
+# PE Bloc D
+
+Aquest repositori conté: 
+- Dades del Bloc D de l'assignatura de Probabilitat i Estadística del GEI de la UPC
+- Scripts per analitzar-les
