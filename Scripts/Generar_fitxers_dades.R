@@ -37,7 +37,12 @@ d <- data.frame(cerveses = c(5,2,9,8,3,7,3,5,3,5,4,6,5,7,1,4),
                 alcohol  = c(.1,.03,.19,.12,.04,.095,.070,.06,.02,.05,.07,.1,.085,.090,.01,.05))
 write_table_PE(d,'cervesa_alcohol')
 
-##-- Cervesa alcohol -----------------------------------------------------------
-d <- data.frame(cerveses = c(5,2,9,8,3,7,3,5,3,5,4,6,5,7,1,4),
-                alcohol  = c(.1,.03,.19,.12,.04,.095,.070,.06,.02,.05,.07,.1,.085,.090,.01,.05))
-write_table_PE(d,'cervesa_alcohol')
+##-- Brillantor durada ---------------------------------------------------------
+d <- data.frame(Brillantor = 1:10,
+                Durada     = c(241,193,205,169,174,134,163,124,11,92))
+write_table_PE(d,'brillantor_durada')
+
+##-- iris ----------------------------------------------------------------------
+data(iris)
+write_table_PE(iris,'iris')
+
