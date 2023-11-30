@@ -11,7 +11,7 @@ d <- read.csv('https://raw.githubusercontent.com/jordicortes40/PE_Bloc_D/main/Da
 (pca.iris <- PCA(iris,quali.sup=c(5: 5)))
 
 ##-- Clustering jerarquic ------------------------------------------------------
-(hcpc.iris <- HCPC(pca.iris)) # S ha de clicar en el grafic
+(hcpc.iris <- HCPC(pca.iris,nb.clust=-1)) 
 table(hcpc.iris$data.clust[,ncol(hcpc.iris$data.clust)],iris$Species)
 
 ##-- K-means -------------------------------------------------------------------

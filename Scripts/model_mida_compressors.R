@@ -37,7 +37,7 @@ d[,1:3] <- d[,1:3]/1000 # Per tenir numeros mes petits
 ################################################################################
 # Model per estimar una mitjana
 ################################################################################
-##-- Model
+##-- Model per estimar una mitjana
 mod_1 <- lm(zip~1,data = d)
 s <- summary(mod_1)
 s
@@ -66,22 +66,22 @@ qqline(log(d$zip))
 ##-- Crear variable diferencia
 d$dif <- d$zip-d$tar
 
-##-- Model
+##-- Model per estimar una diferencia de mitjanes aparellada
 mod_2 <- lm(dif~1,data = d)
 s <- summary(mod_2)
 s
 
-##-- IC95% de la mitjana a ma
+##-- IC95% de la diferencia de mitjanes a ma
 m  <- mod_2$coefficients            # mitjana
 se <- s$coefficients[,'Std. Error'] # error estandard
 q  <- qt(0.975,mod_1$df)            # quantil
 m - q * se
 m + q * se
 
-##-- IC95% amb funcio
+##-- IC95% de la diferencia de mitjanes amb funcio
 confint(mod_2)
 
-##-- Normalitat
+##-- Normalitat de la diferencia
 qqnorm(d$dif)
 qqline(d$dif)
 
@@ -107,16 +107,16 @@ summary(d$rati)
 table(d$type)
 with(d,tapply(rati,type,mean))
 
-##-- Model
+##-- Model amb un factor
 mod_3 <- lm(rati~type,data = d)
 s <- summary(mod_3)
 s
 
-##-- Validacio Premissa de normalitat (sobre els residus) --> NO
+##-- Validacio Premissa de normalitat (sobre els residus)
 qqnorm(resid(mod_3))
 qqline(resid(mod_3))
 
-##-- Validacio Premissa d'homocesdatiscitat --> NO
+##-- Validacio Premissa de homocesdatiscitat
 boxplot(rati~type,d)
 
 ##-- IC95% dels coeficients (no de les mitjanes per grup)
@@ -132,17 +132,17 @@ pairs(em)  # Diferencies de mitjanes
 
 
 ################################################################################
-# Model lineal simple
+# Model lineal simple (MLS)
 ################################################################################
 ##-- Descriptiva
 plot(zip~mida,data = d)
 
-##-- Model
+##-- Model lineal simple
 mod_4 <- lm(zip~mida,data = d)
 s <- summary(mod_4)
 s
 
-##-- Validacio Premisses --> NO
+##-- Validacio Premisses (MLS)
 par(mfrow=c(2,2))
 plot(mod_4,ask=FALSE)
 
@@ -159,19 +159,19 @@ mod_5 <- lm(logzip~logmida,data = d)
 s <- summary(mod_5)
 s
 
-##-- Validacio Premisses --> NO
+##-- Validacio Premisses
 par(mfrow=c(2,2))
 plot(mod_5,ask=FALSE)
 
 ################################################################################
-# Model lineal multiple
+# Model lineal multiple (MLM)
 ################################################################################
-##-- Model
+##-- Model lineal multiple
 mod_6 <- lm(zip~mida+type,data = d)
 s <- summary(mod_6)
 s
 
-##-- Validacio Premisses
+##-- Validacio Premisses mod_6 (MLM)
 par(mfrow=c(2,2))
 plot(mod_6,ask=FALSE)
 
@@ -180,15 +180,15 @@ mod_7 <- lm(zip ~ mida*type,data = d)
 s <- summary(mod_7)
 s
 
-##-- Validacio Premisses
+##-- Validacio Premisses mod_7 (MLM)
 par(mfrow=c(2,2))
 plot(mod_7,ask=FALSE)
 
-##-- Model amb interaccio i logs --> NO millora
+##-- Model amb interaccio i logs
 mod_8 <- lm(logzip ~ logmida*type,data = d)
 s <- summary(mod_8)
 s
 
-##-- Validacio Premisses
+##-- Validacio Premisses mod_8 (MLM)
 par(mfrow=c(2,2))
 plot(mod_8,ask=FALSE)
