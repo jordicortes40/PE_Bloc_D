@@ -35,7 +35,7 @@ d <- read.csv('https://raw.githubusercontent.com/jordicortes40/PE_Bloc_D/main/Da
 # d <- read.csv('../Dades/recorre_arbres.csv')
 
 ##-- Model amb metode
-mod1 <- lm(Temps~as.factor(metode),d)
+mod1 <- lm(Temps ~ as.factor(metode),d)
 summary(mod1)
 
 # Premissa normalitat residus
@@ -56,7 +56,7 @@ par(mfrow=c(2,2))
 plot(mod2,ask=FALSE)
 
 ##-- Model complert
-mod3 <- lm(Temps~nodes + as.factor(metode),d)
+mod3 <- lm(Temps ~ nodes + as.factor(metode),d)
 summary(mod3)
 
 # Premisses
