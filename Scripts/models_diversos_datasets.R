@@ -24,7 +24,7 @@ summary(mod)
 qqnorm(d$lgt)
 qqline(d$lgt)
 
-# Premsissa homoscedasticitat
+# Premissa homoscedasticitat
 boxplot(lgt~nodes,d)
 
 # IC95% per les mitjanes dels temps dels nodes
@@ -43,7 +43,7 @@ qqnorm(resid(mod1))
 qqline(resid(mod1))
 
 # Premsissa homoscedasticitat
-boxplot(lgt~nodes,d)
+boxplot(Temps~metode,d)
 
 ##-- Model amb nodes
 mod2 <- lm(Temps~nodes,d)
