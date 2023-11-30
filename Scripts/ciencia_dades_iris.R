@@ -4,7 +4,8 @@ rm(list=ls())
 library(FactoMineR)
 
 ##-- Llegir dades --------------------------------------------------------------
-iris <- read.csv('../Dades/iris.csv')
+d <- read.csv('https://raw.githubusercontent.com/jordicortes40/PE_Bloc_D/main/Dades/iris.csv')
+# iris <- read.csv('../Dades/iris.csv')
 
 ##-- Analisi de components principals ------------------------------------------
 (pca.iris <- PCA(iris,quali.sup=c(5: 5)))

@@ -29,7 +29,8 @@ library(PairedData)
 # zip:  mida del fitxer despres de comprimir amb zip
 # type: tipus de fitxer
 ################################################################################
-d <- read.table('../Dades/mida_compressors.csv',sep=',',header=TRUE, stringsAsFactors = TRUE)
+d <- read.csv('https://raw.githubusercontent.com/jordicortes40/PE_Bloc_D/main/Dades/mida_compressors.csv')
+# d <- read.table('../Dades/mida_compressors.csv',sep=',',header=TRUE, stringsAsFactors = TRUE)
 summary(d)
 d[,1:3] <- d[,1:3]/1000 # Per tenir numeros mes petits
 

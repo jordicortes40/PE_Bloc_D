@@ -4,7 +4,8 @@ rm(list=ls())
 library(emmeans)
 
 ##-- Temps compressors ---------------------------------------------------------
-d <- read.csv('../Dades/temps_compressors.csv')
+d <- read.csv('https://raw.githubusercontent.com/jordicortes40/PE_Bloc_D/main/Dades/temps_compressors.csv')
+# d <- read.csv('../Dades/temps_compressors.csv')
 
 mod <- lm(temps~1,d)
 summary(mod)
@@ -14,7 +15,8 @@ qqnorm(d$temps)
 qqline(d$temps)
 
 ##-- Algoritme Dijkstra --------------------------------------------------------
-d <- read.csv('../Dades/algoritme_dijkstra.csv')
+d <- read.csv('https://raw.githubusercontent.com/jordicortes40/PE_Bloc_D/main/Dades/algoritme_dijkstra.csv')
+# d <- read.csv('../Dades/algoritme_dijkstra.csv')
 mod <- lm(lgt~as.factor(nodes),d)
 summary(mod)
 
@@ -29,7 +31,8 @@ boxplot(lgt~nodes,d)
 emmeans(mod,~nodes)
 
 ##-- Recorre arbres ------------------------------------------------------------
-d <- read.csv('../Dades/recorre_arbres.csv')
+d <- read.csv('https://raw.githubusercontent.com/jordicortes40/PE_Bloc_D/main/Dades/recorre_arbres.csv')
+# d <- read.csv('../Dades/recorre_arbres.csv')
 
 ##-- Model amb metode
 mod1 <- lm(Temps~as.factor(metode),d)
@@ -62,7 +65,8 @@ plot(mod3,ask=FALSE)
 
 
 ##-- Benzina -------------------------------------------------------------------
-d <- read.csv('../Dades/benzina_velocitat.csv')
+d <- read.csv('https://raw.githubusercontent.com/jordicortes40/PE_Bloc_D/main/Dades/benzina_velocitat.csv')
+# d <- read.csv('../Dades/benzina_velocitat.csv')
 
 # Model
 mod <- lm(fuel~speed,d)
@@ -78,7 +82,8 @@ par(mfrow=c(2,2))
 plot(mod,ask=FALSE)
 
 ##-- Cervesa alcohol -----------------------------------------------------------
-d <- read.csv('../Dades/cervesa_alcohol.csv')
+d <- read.csv('https://raw.githubusercontent.com/jordicortes40/PE_Bloc_D/main/Dades/cervesa_alcohol.csv')
+# d <- read.csv('../Dades/cervesa_alcohol.csv')
 
 # Model
 mod <- lm(alc~n.cerv,d)
@@ -90,7 +95,8 @@ plot(mod,ask=FALSE)
 
 
 ##-- brillantor durada ---------------------------------------------------------
-d <- read.csv('../Dades/brillantor_durada.csv')
+d <- read.csv('https://raw.githubusercontent.com/jordicortes40/PE_Bloc_D/main/Dades/brillantor_durada.csv')
+# d <- read.csv('../Dades/brillantor_durada.csv')
 
 # Model
 mod <- lm(Durada~Brillantor,d)
