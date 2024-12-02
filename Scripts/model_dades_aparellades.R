@@ -19,7 +19,12 @@ confint(m)
 t.test(d$Right, d$Left, paired = TRUE)
 
 ##-- Premisses -----------------------------------------------------------------
+# Normalitat
+qqnorm(d$dif)
+qqline(d$dif, col=2)
+
+# Efecte constant
 x <- d$Right
 y <- d$Left
 p <- paired(x,y)
-plot(p, type='BA')
+plot(p, type = 'BA')
