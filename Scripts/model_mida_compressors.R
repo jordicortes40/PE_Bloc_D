@@ -64,7 +64,7 @@ qqline(log(d$zip))
 # Model per estimar una diferencia de mitjanes aparellada
 ################################################################################
 ##-- Crear variable diferencia
-d$dif <- d$zip-d$tar
+d$dif <- d$zip - d$tar
 
 ##-- Model per estimar una diferencia de mitjanes aparellada
 mod_2 <- lm(dif~1,data = d)
@@ -119,10 +119,10 @@ qqline(resid(mod_3))
 ##-- Validacio Premissa de homocesdatiscitat
 boxplot(rati~type,d)
 
-##-- IC95% dels coeficients (no de les mitjanes per grup)
+##-- IC95% dels coeficients (NO de les mitjanes per grup)
 confint(mod_3)
 
-##-- IC95% de les mitjanes per grup (No dels coeficients)
+##-- IC95% de les mitjanes per grup (NO dels coeficients)
 em <- emmeans(mod_3,~type)
 em
 
