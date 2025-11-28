@@ -42,7 +42,7 @@ summary(mod1)
 qqnorm(resid(mod1))
 qqline(resid(mod1))
 
-# Premsissa homoscedasticitat
+# Premissa homoscedasticitat
 boxplot(Temps~metode,d)
 
 ##-- Model amb nodes

@@ -21,9 +21,9 @@ m <- lm(y~x, data = d)
 summary(m)
 
 ##-- Interpretacio -------------------------------------------------------------
-confint(m)         # Intervals de confianca de coeficients
-(em <- emmeans(m)) # Mitjanes de cada grup
-plot(em)           # Intervals de confianca de mitjanes de cada grup
+confint(m)             # Intervals de confianca de coeficients
+(em <- emmeans(m, ~x)) # Mitjanes de cada grup
+plot(em)               # Intervals de confianca de mitjanes de cada grup
 
 ##-- Premisses -----------------------------------------------------------------
 ##-- Normalitat
@@ -39,6 +39,6 @@ qqnorm(IND)
 qqline(IND, col=2)
 
 ##-- Homoscedaticitat
-par(mfrow=c(1,3))
+par(mfrow=c(1,1))
 boxplot(y~x, data = d)
 
